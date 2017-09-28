@@ -230,8 +230,7 @@ function outer() {
       },
 
       takeAwayFromSecret: function(num){
-          secret -=num;
-          return secret;
+          return secret-=num;
       }
     }
     
@@ -265,10 +264,11 @@ function outer() {
         console.log(index)
       }
     }
-      for (var i = 0; i <= 5; i++) {
+      for (var i = 0; i <= 500; i++) {
          setTimeout(outer(i), i * 1000)
       }
     
     }
     timeOutCounter();
+  
   
