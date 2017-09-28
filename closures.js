@@ -15,6 +15,8 @@ function outer() {
   another variable called 'inner'. */
   
   // Code Here
+  let inner = outer();
+  onmsinertiastart();
   
   //Once you do that, invoke inner.
   
