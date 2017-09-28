@@ -16,7 +16,7 @@ function outer() {
   
   // Code Here
   let inner = outer();
-  onmsinertiastart();
+  inner();
   
   //Once you do that, invoke inner.
   
@@ -53,7 +53,8 @@ function outer() {
   */
   
     //Code Here
-  
+  let callJake = callFriend('Jake');
+  callJake('435-555-9248');
   
   
   
@@ -71,13 +72,20 @@ function outer() {
   properly. */
   
   //Code Here
+  function makeCounter(){
+    let count = 0;
+    return function(){
+      return ++count
+    }
+
+  }
   
   //Uncomment this once you make your function
-  //   var count = makeCounter();
-  //   count(); // 1
-  //   count(); // 2
-  //   count(); // 3
-  //   count(); // 4
+    var count = makeCounter();
+    count(); // 1
+    count(); // 2
+    count(); // 3
+    count(); // 4
   
   
   
@@ -104,20 +112,23 @@ function outer() {
   
   function counterFactory(value) {
   
-    // Code here.
-  
-  
     return {
-
+      inc: function(){
+        return ++value
+      },
+  
+      dec: function(){
+        return --value
+      }
     }
   }
   
   
   counter = counterFactory(10);
-  // counter.inc() // 11
-  // counter.inc() // 12
-  // counter.inc() // 13
-  // counter.dec() // 12
+  counter.inc() // 11
+  counter.inc() // 12
+  counter.inc() // 13
+  counter.dec() // 12
   
   
   
